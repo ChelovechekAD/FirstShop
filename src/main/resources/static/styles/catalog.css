@@ -1,0 +1,210 @@
+.page{
+    width: 100%;
+    padding: 4.7vw 1vw 1vw;
+}
+    .category{
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+    }
+        .category_block{
+            min-width: 25%;
+            height: 22vw;
+            padding: 0.5vw;
+        }
+            .category_block_body{
+                box-shadow: 0 0 15px 15px rgba(0,0,0,0.7);
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+            }
+                .category_name{
+                    color: white;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: 1.5vw;
+                    padding: 0.5vw 0px;
+                    background-color: rgba(0,0,0,0.8);
+                }
+    .list{
+        width: 80%;
+        height: 100%;
+        display: grid;
+        grid-template-columns: 25% 25% 25% 25%;
+
+    }
+        .list-item{
+            display: flex;
+            flex-direction: column;
+            min-width: 25%;
+            height: 23vw;
+            padding: 0.5vw;
+            color: white;
+        }
+            .list-item-body{
+                box-shadow: 0 0 15px 15px rgba(0,0,0,0.7);
+                width: 100%;
+                height: 100%;
+                background-color: rgba(0,0,0,0.5);
+                color: white;
+                padding: 0.2vw;
+            }
+                .list-item-body-img{
+                    height: 55%;
+                    width: 100%;
+                    background-color: white;
+                }
+                    .list-item-body-img img{
+                        height: 100%;
+                        width: 100%;
+                    }
+                .list-item-body-description{
+                    padding: 0.3vw;
+                    width: 100%;
+                    height: 20%;
+                    font-size: 0.8vw;
+                    overflow: hidden;
+                    overflow-y:scroll;
+                }
+                .list-item-body-footer{
+                    width: 100%;
+                    height: 30%;
+                }
+                    .list-item-body-footer-price_rate{
+                        width: 100%;
+                        height: 25%;
+                        display: flex;
+                        font-size: 0.8vw;
+                        flex-direction: row;
+                        align-items: center;
+                        justify-content: space-between;
+                    }
+                        .list-item-body-footer-price_rate-price{
+
+                        }
+                        .list-item-body-footer-price_rate-rate{
+
+                        }
+                    .list-item-body-footer-count{
+                        width: 100%;
+                        height: 25%;
+                        display: flex;
+                        align-items: center;
+                        flex-direction: row;
+                        justify-content: center;
+                        font-size: 0.8vw;
+                    }
+                        .list-item-body-footer-count-minus, .list-item-body-footer-count-plus{
+                            border: 1px white solid;
+                            background-color: transparent;
+                            height: 80%;
+                            text-align: center;
+                            color: white;
+                            font-size: 0.8vw;
+                        }
+                        .list-item-body-footer-count-minus:hover, .list-item-body-footer-count-plus:hover{
+                            background-color: white;
+                            color: black;
+                            border-color: black;
+                        }
+                        .list-item-body-footer-count-minus:active, .list-item-body-footer-count-plus:active{
+                            background-color: grey;
+                            border-color: black;
+                            color: black;
+
+                        }
+                        .list-item-body-footer-count-number{
+                            width: 2vw;
+                            height: 80%;
+                            border: 1px white solid;
+                            border-right: none;
+                            border-left: none;
+                        }
+                            .list-item-body-footer-count-number input{
+                                width: 2vw;
+                                height: 100%;
+                                text-align: center;
+                                appearance: textfield;
+                                background-color: transparent;
+                                color: white;
+                            }
+                            .list-item-body-footer-count-number input:focus{
+                                border: none;
+                                outline: none;
+                                border-bottom: 1px solid red;
+                            }
+
+                    .list-item-body-footer-add{
+                        width: 100%;
+                        height: 30%;
+
+                    }
+                        .list-item-body-footer-add button{
+                            width: 100%;
+                            height: 100%;
+                            background-color: black;
+                            color: white;
+                            border: 1px white solid;
+                            border-radius: 2vw;
+                            font-size: 1.2vw;
+                        }
+                        .list-item-body-footer-add button:hover{
+                            background-color: white;
+                            color: black;
+                            border: black;
+                        }
+                        .list-item-body-footer-add button:active{
+                            background-color: lightgrey;
+                        }
+    .full-description{
+        width: 100%;
+        height: 100%;
+        padding: 1vw;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+        .full-description-image{
+            width: 35%;
+            background-color: white;
+        }
+            .full-description-image img{
+                width: 100%;
+            }
+        .full-description-block{
+            display: flex;
+            flex-direction: column;
+            color: white;
+            width: 64%;
+            font-size: 1.5vw;
+        }
+            .full-description-block-id{
+                font-size: 2vw;
+                color: grey;
+                font-weight: bold;
+                padding: 0.5vw 0.5vw;
+            }
+            .full-description-block-text div{
+                display: flex;
+                justify-content: space-between;
+            }
+                .full-description-block-text-param{
+                    font-weight: bold;
+                }
+                .full-description-block-text-dots{
+                    overflow: hidden;
+                    font-size: 1.5vw;
+                    padding-left: 0.2vw;
+                    color: rgb(108,108,108);
+                }
+                .full-description-block-text-value{
+                    padding-left: 0.3vw;
+                    white-space: nowrap;
+                }
+                .full-description-block-text-des{
+                    padding-top: 2vw;
+                    text-align: justify;
+                }

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Каталог</title>
+  <link rel="stylesheet" href="../static/styles/main_page.css">
+  <link rel="stylesheet" href="/styles/main_page">
+  <link rel="stylesheet" href="/styles/catalog">
+    <script src="/scripts/catalog"></script>
+    <script src="/scripts/jwt_authentication.js"></script>
+</head>
+<body onload="onload_catalog()">
+<header class="header" th:insert="~{blocks/header :: header}"></header>
+<main class="main_body">
+    <div class="container" th:insert="~{blocks/catalog_templates :: (${type == null} ? 'catalog-category-template' : (${id} == null ? 'catalog-list-products' : 'full-description'))}" >
+
+    </div>
+</main>
+<footer class="footer">
+    <div class="container">
+        <div class="footer_body">
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

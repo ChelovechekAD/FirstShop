@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title th:text="${title}">Вход</title>
+  <link rel="stylesheet" href="/styles/auth_reg">
+  <link rel="stylesheet" href="/styles/main_page">
+  <script src="/scripts/catalog"></script>
+</head>
+<body onload="onload_catalog()">
+<header class="header" th:insert="~{blocks/header :: header}"></header>
+<main class="main_body">
+    <div class="page">
+        <div class="center_block" th:insert="~{blocks/auth_reg :: ((${token}!=null) ? redirect : ((${title} == 'Авторизация') ? auth : reg))}">
+
+        </div>
+    </div>
+</main>
+<footer class="footer">
+  <div class="container">
+    <div class="footer_body">
+    </div>
+  </div>
+</footer>
+</body>
+
+</html>

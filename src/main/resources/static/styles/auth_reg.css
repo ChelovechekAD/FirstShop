@@ -1,0 +1,25 @@
+.page{
+    width: 100%;
+    min-height: 100vh;
+    height: 100%;
+    padding-top: 5vw;
+    background-color: rgba(0,0,0,0.8);
+}
+    .center_block{
+        width: 30%;
+        background-color: black;
+        margin: 6vw auto 0;
+        height: 400px;
+
+    }
+    .form-text{
+        color: white;
+    }
+    .form{
+        display: flex;
+        flex-direction: column;
+    }
+    .form label{
+        display: flex;
+        flex-direction: column;
+    }

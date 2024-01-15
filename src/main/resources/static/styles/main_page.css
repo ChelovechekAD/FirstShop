@@ -1,0 +1,109 @@
+*,*:before,*:after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border: 0;
+}
+
+body{
+    min-height: 100vh;
+    height: 100%;
+    background: white;
+    background: url("../images/background.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.container{
+    width: 80%;
+    margin: 0 auto;
+    height: 100%;
+}
+
+.link{
+    text-decoration: none;
+    color: white;
+}
+.link:visited{
+    color: white;
+}
+.link:hover{
+    color: red;
+    text-decoration: underline;
+}
+.header{
+    position: absolute;
+    width: 100%;
+    height: 4vw;
+    min-height: 60px;
+    box-shadow: 0 3px 20px black;
+    background: black;
+}
+    .header_body{
+        display: flex;
+        height: inherit;
+        justify-content: space-between;
+    }
+
+        .logo{
+            height: 100%;
+            width: 30%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+            .logo p{
+                color: white;
+                font-size: 1.5vw;
+            }
+
+        .nav{
+            width: 30%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+            .nav_key_link{
+                margin: 0 1vw;
+                font-size: 1.5vw;
+                color: white;
+                text-decoration: none;
+            }
+            .nav_key_link:hover{
+                color: red;
+                text-decoration: underline;
+            }
+
+
+        .basket{
+            width: 10%;
+            display: flex;
+            justify-content: right;
+            align-items: center;
+        }
+            .basket_text{
+                font-size: 1.2vw;
+                color: white;
+            }
+        .auth{
+            display: flex;
+            justify-content: right;
+            width: 20%;
+            height: inherit;
+            align-items: center;
+        }
+            .auth_text{
+                margin: 0 0.7vw;
+                font-size: 1.2vw;
+                color: white;
+            }
+    .main_body{
+        min-height: 100vh;
+        height: 100%;
+    }
+        .main_body .container{
+            min-height: 100vh;
+            background-color: rgba(0,0,0,0.8);
+        }

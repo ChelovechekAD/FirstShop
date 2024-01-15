@@ -1,0 +1,43 @@
+<div th:fragment="reg" class="form">
+    <form method="POST" action="#" th:action="@{/registration}" th:object="${userForm}">
+        <label>
+            <p class="form-text">Имя пользователя:</p>
+            <input type="text" th:field="*{username}">
+        </label>
+        <label>
+            <p class="form-text">Почта:</p>
+            <input type="text" th:field="*{email}">
+        </label>
+        <label>
+            <p class="form-text">Пароль:</p>
+            <input type="password" th:field="*{password}">
+        </label>
+        <label>
+            <p class="form-text">Повторите пароль:</p>
+            <input type="password" th:field="*{passwordConfirm}">
+        </label>
+        <input type="submit" value="Регистрация">
+    </form>
+
+    <p class="form-text" th:text="'Error ' + ${error}"></p>
+</div>
+
+<div th:fragment="auth" class="form">
+    <form method="POST" action="#" th:action="@{/login}" th:object="${userForm}">
+        <label>
+            <p class="form-text">Почта:</p>
+            <input type="text" th:field="*{email}">
+        </label>
+        <label>
+            <p class="form-text">Пароль:</p>
+            <input type="password" th:field="*{password}">
+        </label>
+        <input type="submit" value="Вход">
+
+    </form>
+    <p class="form-text" th:text="'Error ' + ${error}"></p>
+</div>
+
+<div th:fragment="redirect" class="redirect"
+     th:attr="onload='auth_complete('+${token}+','+${email}+','+${login}+')'">
+</div>

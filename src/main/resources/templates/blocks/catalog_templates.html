@@ -1,0 +1,129 @@
+
+<div class="page" th:fragment = "catalog-category-template">
+    <div class="category">
+        <div class="category_block"  id="timber" onclick="onclick_catalog(this)">
+            <div class="category_block_body" style="background-image: url(/images/timber-logo.png)">
+                <div class="category_name">
+                    <p>Древесина</p>
+                </div>
+            </div>
+        </div>
+        <div class="category_block"  id="bricks" onclick="onclick_catalog(this)">
+            <div class="category_block_body" style="background-image: url(/images/bricks-logo.jpg)">
+                <div class="category_name">
+                    <p>Кирпичи</p>
+                </div>
+            </div>
+        </div>
+        <div class="category_block"  id="metal-tiles" onclick="onclick_catalog(this)">
+            <div class="category_block_body" style="background-image: url(/images/metal-tiles-logo.jpg)">
+                <div class="category_name">
+                    <p>Металлочерепица</p>
+                </div>
+            </div>
+        </div>
+        <div class="category_block"  id="prof-truba" onclick="onclick_catalog(this)">
+            <div class="category_block_body" style="background-image: url(/images/profilnaya-truba-logo.jpg)">
+                <div class="category_name">
+                    <p>Профильная труба</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+
+<div class="page" th:fragment = "catalog-list-products">
+    <div class="list">
+
+
+        <div class="list-item" th:each="el : ${list}">
+            <div class="list-item-body">
+                <div class="list-item-body-img" th:attr="onclick=|redirect_to_full_description('${type}', ${el.id})|">
+                    <img th:src="'/img_products/' + ${el.name} + '.jpg'" th:alt="${el.name} + '.jpg'" th:attr="onclick=|redirect_to_full_description('${type}', ${el.id})|">
+                </div>
+                <div class="list-item-body-description" th:insert="~{/blocks/catalog_templates :: ${type}}">
+
+                </div>
+                <div class="list-item-body-footer">
+                    <div class="list-item-body-footer-price_rate">
+                        <div class="list-item-body-footer-price_rate-price">
+                            <b><p th:text="${el.price} + 'р. за метр'">price</p></b>
+                        </div>
+                        <div class="list-item-body-footer-price_rate-rate">
+                            <p th:text="((${el.rate} % 1 != 0) ? ${el.rate} : ${el.rate} + '.0') + '\5.0'">rate</p>
+                        </div>
+                    </div>
+                    <div class="list-item-body-footer-count">
+                        <input class="list-item-body-footer-count-minus" type="button" value="-" onclick="onclick_plus_minus(this)">
+                        <div class="list-item-body-footer-count-number">
+                            <input type="number" inputmode="numeric" min="1" size="4" step="1" value="1">
+                        </div>
+                        <input class="list-item-body-footer-count-plus" type="button" value="+" onclick="onclick_plus_minus(this)">
+                    </div>
+                    <div class="list-item-body-footer-add">
+                        <button><b>ADD TO CART</b></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p th:fragment="timber" th:text="|${el.name}, ${el.size}, ${el.country}| + ((${el.description} != null) ? ', ' + ${el.description} + '.' : '.')">DESCRIPTION</p>
+<p th:fragment="bricks" th:text="|${el.name}, ${el.color}, ${el.company}| + ((${el.description} != null) ? ', ' + ${el.description} + '.' : '.')">DESCRIPTION</p>
+
+<div class="page" th:fragment="full-description" th:each="el : ${prod}">
+    <div class="full-description">
+        <div class="full-description-image">
+            <img th:src="'/img_products/' + ${el.name} + '.jpg'" th:alt="${el.name} + '.jpg'">
+        </div>
+        <div class="full-description-block">
+            <div class="full-description-block-id">
+                <p th:text="'ID:' + ${el.id}">ID</p>
+            </div>
+            <div th:insert="~{/blocks/catalog_templates :: (${type} + '_description')}">
+
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="full-description-block-text" th:fragment="timber_description" th:each="el : ${prod}">
+    <div>
+        <p class="full-description-block-text-param">Наименование:</p>
+        <p class="full-description-block-text-dots">.....................................................................................</p>
+        <p class="full-description-block-text-value" th:text="${el.name}">Unknown</p>
+    </div>
+    <div>
+        <p class="full-description-block-text-param">Размер:</p>
+        <p class="full-description-block-text-dots">.....................................................................................</p>
+        <p class="full-description-block-text-value" th:text="${el.size}">Unknown</p>
+    </div>
+    <div>
+        <p class="full-description-block-text-param">Страна:</p>
+        <p class="full-description-block-text-dots">.....................................................................................</p>
+        <p class="full-description-block-text-value" th:text="${el.country}">Unknown</p>
+    </div>
+    <p th:text="((${el.description} != null) ? 'Описание: ' + ${el.description} : _)"></p>
+</div>
+
+<div class="full-description-block-text" th:fragment="bricks_description" th:each="el : ${prod}">
+    <div>
+        <p class="full-description-block-text-param">Наименование:</p>
+        <p class="full-description-block-text-dots">.....................................................................................</p>
+        <p class="full-description-block-text-value" th:text="${el.name}">Unknown</p>
+    </div>
+    <div>
+        <p class="full-description-block-text-param">Цвет:</p>
+        <p class="full-description-block-text-dots">.....................................................................................</p>
+        <p class="full-description-block-text-value" th:text="${el.color}">Unknown</p>
+    </div>
+    <div>
+        <p class="full-description-block-text-param">Производитель:</p>
+        <p class="full-description-block-text-dots">.....................................................................................</p>
+        <p class="full-description-block-text-value" th:text="${el.company}">Unknown</p>
+    </div>
+    <p class="full-description-block-text-des" th:text="((${el.description} != null) ? 'Описание: ' + ${el.description} : _)"></p>
+</div>

@@ -1,0 +1,31 @@
+
+    <div class="container" th:fragment="header">
+        <div class="header_body">
+            <div class="logo">
+                <p>Тут могло быть ваше лого</p>
+            </div>
+            <div class="nav">
+                <p class="nav_key">
+                    <a href="#" class="nav_key_link">Главная</a>
+                </p>
+                <p class="nav_key">
+                    <a href="/catalog" class="nav_key_link">Каталог</a>
+                </p>
+                <p class="nav_key">
+                    <a href="#" class="nav_key_link">О нас</a>
+                </p>
+            </div>
+            <div class="basket">
+                <p class="basket_text">Корзина</p>
+            </div>
+            <div class="auth" th:if="${token} == null">
+                <p class="auth_text"><a class="link" href="/login">Войти</a></p>
+                <p class="auth_text"><a class="link" href="/registration">Регистрация</a></p>
+            </div>
+            <div class="auth" th:if="${token} != null">
+                <p class="auth_text" th:text="${email}"></p>
+                <p class="auth_text" th:text="${login}"></p>
+            </div>
+
+        </div>
+    </div>
